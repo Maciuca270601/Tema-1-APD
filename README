@@ -1,0 +1,34 @@
+Student: Maciuca Alexandru Petru
+Group: 334CA
+Homework: Tema1
+Course: APD
+
+## The implementation
+
+    The homework uses two types of threads : mappers and reducers.
+    Both of them have to be created simultaneously and synchronized with
+    the help of mutexes and barriers.
+
+    I have created a structure for both the mappers and reducers in order
+    to store their data. The structures contain pointers to both the barrier
+    and the mutex.
+
+    The mappers have to be able to open all the files and extract succesfully
+    all the numbers that could be written as perfect powers of an interger
+    base.
+
+    The reducers have to get the lists created by the mappers and filter the
+    duplicates and write the total number of numbers in the output.
+    I have used the sets in order to eliminate the duplicates.
+
+    In order to extract the numbers I am looking for, I am using a function 
+    that gets the nth-root of a number and then checks if 
+    that specific root is an integer. The function uses a binary search where 
+    the low_base is 2 and the high base is the closest power of 2 smaller than
+    our given input number. This is made to reduce the number of operations
+    that this function has to do on bigger numbers and tests.
+    Also the mid from the binary search function is an integer in order
+    to reduce the number of operations since we are searching for integer
+    bases.
+ 
+
